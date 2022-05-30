@@ -1,16 +1,24 @@
-#include <stdio.h>
-int main() {
-  int n;
-  scanf("%d", &n);
- int  arr[n];
-  for (int i = 0; i < n; ++i) {
-    scanf("%d", &arr[i]);
-  }  
-    for (int i = 0; i < n; ++i) {
-    if (arr[0] < arr[i]) {
-      arr[0] = arr[i];
+#include<stdio.h>
+int  minmax(int arr[],int *min,int *max,int n){
+    *min=*max=arr[0];
+    for(int i=1;i<n;i++){
+        if(arr[i]>*max){
+            *max=arr[i];
+        }
+        if (arr[i]<*min){
+            *min=arr[i];
+        }
     }
-  }
-  printf("Largest element = %d", arr[0]);
-  return 0;
+}
+int main(){
+    int n;
+    int min,max;
+    scanf("%d",&n);
+    int arr[n];
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    minmax(arr,&min,&max,n);
+    printf("%d %d",min,max);
+return 0;
 }

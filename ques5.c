@@ -1,22 +1,22 @@
 #include<stdio.h>
 int main(){
-    int n,i,c,max,min;
+    int n;
     scanf("%d",&n);
-    int a[n];
+    int *even;
+    int arr[n];
+    even =arr;
+    int c=0;
     for(int i=0;i<n;i++){
-        scanf("%d",&a[i]);
+        scanf("%d",&arr[i]);
     }
-    max=a[0];
-    min=a[0];
     for(int i=0;i<n;i++){
-        if(a[i]>max){
-            max=a[i];
+        if(*(even+i)%2==0){
+            printf("%d ",*(even+i));
+            c++;
+           
         }
-        else if(a[i]<min){
-            min=a[i];
-        }
-     
     }
-    printf("%d is the largest element\n",max);
-    printf("%d is the smallest element",min);
+    printf("\n");
+    printf("%d",c);
+return 0;
 }

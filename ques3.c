@@ -1,14 +1,11 @@
 #include<stdio.h>
 int main(){
-    int n,i;
-    scanf("%d",&n);
-    int a[n];
-    for (int i=0;i<n;i++){
-        scanf("%d",&a[i]);
-    }
-    for(int i=0;i<n;i++){
-        if(i%2==0){
-            printf("%d,",a[i]);
+    int arr[5]={1,2,3,4,5};
+    int *p=arr;
+    for(int i=0;i<5;i++){
+        if((*p+i%2)!=0){
+            printf("%d",(*p+i));
         }
     }
+return 0;
 }
